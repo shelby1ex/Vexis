@@ -1,0 +1,7 @@
+# Vexis runtime dependencies (install.bat installs these as well)
+pywebview>=4.4
+Pillow>=10
+
+# Development / build / tests
+pytest>=8
+pyinstaller>=6

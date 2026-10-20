@@ -1,0 +1,58 @@
+# Secrets & local data
+.vexis_secret
+vexis.db
+.env
+
+# API keys live in ENV only (VEXIS_PRIMARY_KEY / VEXIS_BACKUP_API_KEYS).
+# seed_keys.json / seed_models.json were REMOVED from the working tree and
+# from git history (they contained a live API key). Never commit them again.
+seed_keys.json
+seed_models.json
+*.disabled
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Logs & runtime
+*.log
+.coverage
+# run.bat console logs + the pid file of the running server
+vexis_logs/
+# engine binary + isolated database + rollback/staging (never source)
+.runtime/
+.data/
+# build output (Vexis.exe / portable zip / installer)
+dist/
+# WebView2 persistent profile (cache, not source)
+.webview2/
+# user-uploaded avatars (runtime data, not source)
+uploads/
+
+# Local test artifacts
+test_*.db
+
+# PyInstaller output (rebuilt from vexis_ui/Vexis.spec)
+vexis_ui/build/
+vexis_ui/dist/
+vexis_ui/Vexis.exe
+vexis_ui/vexis_logs/
+*.spec.bak
+
+# engine runtime state: keys, pids, logs (config/ has its own .gitignore too)
+config/auth.json
+config/auth/
+config/engine*.log
+config/*.pid
+
+# the agent's default working directory is its own git repo (runtime data)
+workspace/
+
+# downloaded redistributables used by the installer build (see INSTALL.md)
+redist/
+
+# virtualenvs
+.venv/
+venv/
+*.egg-info/
